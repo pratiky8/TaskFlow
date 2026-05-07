@@ -1,0 +1,17 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "echo 'Specify a service to deploy'"
+
+[[services]]
+name = "backend"
+source = "server"
+buildCommand = "npm install"
+startCommand = "npm start"
+
+[[services]]
+name = "frontend"
+source = "team-task-manager"
+buildCommand = "npm install && npm run build"
+startCommand = "npm run preview"
